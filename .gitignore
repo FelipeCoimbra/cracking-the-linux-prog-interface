@@ -1,0 +1,10 @@
+# IDE
+.vscode
+.idea
+
+# Vagrant
+.vagrant
+
+# Compiling
+run
+*.o
