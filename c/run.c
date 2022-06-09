@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "chpt3/chpt3.h"
+#include "chpt4/chpt4.h"
 
 /**
  * chpt_number must be in range [0,64]
@@ -40,8 +40,8 @@ int main(int argc, char* argv[]) {
         fprintf(stderr, "Usage: run CHAPTER QUESTION [...ARGS]\n");
         exit(1);
     }
-    if (cmp_chpt(argv[1], 3)) {
-        chpt3_run(argv[2], NULL);
+    if (cmp_chpt(argv[1], 4)) {
+        chpt4_run(argv[2], NULL);
     } else {
         fprintf(stderr, "No solutions for chapter %s\n", argv[1]);
     }
