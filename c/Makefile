@@ -1,4 +1,5 @@
 CC := /usr/bin/gcc
+CFLAGS=-Wall
 
 ALL_CHPT_SRCS := $(wildcard ./**/*.c)
 MAIN_SRC := run.c
