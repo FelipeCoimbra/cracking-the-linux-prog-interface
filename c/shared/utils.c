@@ -21,7 +21,7 @@ int cmp_question(const char* candidate, int question_number) {
     sprintf(question_number_str, "%d", question_number);
 
     int equal = 0;
-    for (int i = 0; i<4 && equal == 0; i++) {
+    for (int i = 0; i<3 && equal == 0; i++) {
         strcpy(target, prefixes[i]);
         strcat(target, question_number_str);
         equal = strncmp(candidate, target, strlen(target)+1) == 0;
