@@ -1,6 +1,8 @@
 #ifndef __CHPT4_Q1_H__
 #define __CHPT4_Q1_H__
 
-void q1();
+#include "../shared/utils.h"
+
+void q1(char * filepath, Boolean append);
 
 #endif

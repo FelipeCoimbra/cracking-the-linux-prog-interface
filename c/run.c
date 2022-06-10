@@ -40,8 +40,9 @@ int main(int argc, char* argv[]) {
         fprintf(stderr, "Usage: run CHAPTER QUESTION [...ARGS]\n");
         exit(1);
     }
+    argc -= 2; // Point to the question arg as new argv[0]
     if (cmp_chpt(argv[1], 4)) {
-        chpt4_run(argv[2], NULL);
+        chpt4_run(argv[2], argc, argv+2);
     } else {
         fprintf(stderr, "No solutions for chapter %s\n", argv[1]);
     }
