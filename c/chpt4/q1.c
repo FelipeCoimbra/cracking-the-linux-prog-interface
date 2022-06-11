@@ -27,4 +27,14 @@ void q1(char * filepath, Boolean append) {
 	if (nr_read == -1) {
 		errExit("Error on read syscall\n");
 	}
+
+	int fsync_st = fsync(fd);
+	if (fsync_st == -1) {
+		errExit("Error on fsync syscall\n");
+	}
+
+	int close_st = close(fd);
+	if (close_st == -1) {
+		errExit("Error on close syscall\n");
+	}
 }
