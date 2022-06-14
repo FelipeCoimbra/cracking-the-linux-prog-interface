@@ -1,7 +1,7 @@
-#include <stdio.h>
 #include <fcntl.h>
 
 #include "q1.h"
+#include "../shared/errors.h"
 
 void q1(char * filepath, Boolean append) {
 	
