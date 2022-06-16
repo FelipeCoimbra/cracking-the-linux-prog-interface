@@ -102,7 +102,7 @@ void q2_std(const char* src_file, const char* dst_file) {
 				break;
 			} else {
 				// Any other errno is a real error
-				errExit("Failed to move to closest data region starting at %zd\n", data_end);
+				errExit("Failed to move to closest data region starting at %ld\n", (long) data_end);
 			}
 		} else {
 			// Moved data_begin to the beginning of the next data region
@@ -110,7 +110,7 @@ void q2_std(const char* src_file, const char* dst_file) {
 		}
 		data_end = lseek(src_fd, data_begin, SEEK_HOLE);
 		if (data_end < data_begin) {
-			errExit("Failed to find the end of data region beginning at: %zd\n", data_begin);
+			errExit("Failed to find the end of data region beginning at: %ld\n", (long) data_begin);
 		}
 		
 		// Set cursors
@@ -123,7 +123,7 @@ void q2_std(const char* src_file, const char* dst_file) {
 			deliver_write(dst_fd, buffer, nread);
 		}
 		if (nread == -1) {
-			errExit("Failed to read file between offsets %zd - %zd\n", data_begin+read_within_region, data_end);
+			errExit("Failed to read file between offsets %ld - %ld\n", (long) (data_begin+read_within_region), (long) data_end);
 		}
 	}
 
