@@ -5,6 +5,7 @@
 #include "../shared/errors.h"
 #include "../shared/utils.h"
 #include "q1.h"
+#include "q2.h"
 
 void chpt5_run(const char* q, int argc, char* argv[]) {
     const char * q1_usage = "chpt5 q1 <FILEPATH (255)> <OFFSET>\n";
@@ -30,6 +31,8 @@ void chpt5_run(const char* q, int argc, char* argv[]) {
 
         chpt5_q1(filepath, offset);
 
+    } else if (cmp_question(q, 2)) {
+        chpt5_q2();
     } else {
         usageErr("Chapter 4 has no solution for \"%s\"\n", q);
     }
