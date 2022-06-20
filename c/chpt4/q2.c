@@ -7,6 +7,7 @@
 	#define _GNU_SOURCE
 #endif
 
+#include <errno.h>
 #include <fcntl.h> /** open and mode_t flags */
 #include <linux/falloc.h>
 #include <sys/types.h> /** size types */
@@ -15,28 +16,6 @@
 #include "q2.h"
 #include "../shared/errors.h"
 #include "../shared/utils.h"
-
-/**
- * Like a write, but is guaranteed to deliver all bytes (or die trying!)
- */
-void deliver_write(int fd, const void * buffer, size_t nbytes) {
-	size_t total_written = 0;
-	ssize_t nwritten = write(fd, buffer+total_written, nbytes-total_written);
-	while(nwritten > 0) {
-		total_written += nwritten;
-		nwritten = write(fd, buffer+total_written, nbytes-total_written);
-	}
-	if (nwritten == -1) {
-		errExit("Error on writing data\n");
-	}
-}
-
-void safe_close(int fd) {
-	int close_st = close(fd);
-	if (close_st == -1) {
-		errExit("Error on input close\n");
-	}
-}
 
 // Solution for book assignment
 void q2_std(const char* src_file, const char* dst_file);

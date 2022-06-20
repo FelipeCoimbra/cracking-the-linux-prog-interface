@@ -1,6 +1,9 @@
+#include <getopt.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
+#include "../shared/errors.h"
 #include "../shared/utils.h"
 #include "q1.h"
 #include "q2.h"

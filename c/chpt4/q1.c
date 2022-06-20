@@ -1,4 +1,6 @@
 #include <fcntl.h>
+#include <stddef.h>
+#include <unistd.h>
 
 #include "q1.h"
 #include "../shared/errors.h"

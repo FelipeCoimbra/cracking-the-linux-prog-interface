@@ -1,20 +1,26 @@
 #ifndef __SHARED_UTILS_H__
 #define __SHARED_UTILS_H__
 
-#include <sys/types.h> /* Type definitions used by many programs */
-#include <stdio.h> /* Standard I/O functions */
-#include <stdlib.h> /* Prototypes of commonly used library functions,
-plus EXIT_SUCCESS and EXIT_FAILURE constants */
-#include <unistd.h> /* Prototypes for many system calls */
-#include <errno.h> /* Declares errno and defines error constants */
-#include <string.h> /* Commonly used string-handling functions */
-#include "errors.h" /* Declares our error-handling functions */
+#include <stddef.h> /* For size_t */
 
 typedef enum { FALSE, TRUE } Boolean;
 
 #define min(m,n) ((m) < (n) ? (m) : (n))
 #define max(m,n) ((m) > (n) ? (m) : (n))
 
+/**
+ * question_number must be in range [0,999]
+ */
 int cmp_question(const char* candidate, int question_number);
+
+/**
+ * Like a write, but is guaranteed to deliver all bytes (or die trying!)
+ */
+void deliver_write(int fd, const void * buffer, size_t nbytes);
+
+/**
+ * Like a close, but is guaranteed to close successfully (or die trying!)
+ */
+void safe_close(int fd);
 
 #endif
