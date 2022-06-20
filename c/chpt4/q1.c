@@ -3,7 +3,7 @@
 #include "q1.h"
 #include "../shared/errors.h"
 
-void q1(char * filepath, Boolean append) {
+void chpt4_q1(char * filepath, Boolean append) {
 	
 	int open_flags = O_CREAT | O_WRONLY | (append ? O_APPEND : O_TRUNC);
 	mode_t newly_created_perms = 

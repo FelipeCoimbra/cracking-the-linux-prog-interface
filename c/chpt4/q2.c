@@ -44,7 +44,7 @@ void q2_std(const char* src_file, const char* dst_file);
 // Any null values read are turned into holes, independent of being written values or holes.
 void q2_nulls_into_holes(const char* src_file, const char* dst_file);
 
-void q2(const char* src_file, const char* dst_file) {
+void chpt4_q2(const char* src_file, const char* dst_file) {
 	#ifdef CHPT4_Q2_TURN_NULLS_INTO_HOLES
 		q2_nulls_into_holes(src_file, dst_file);
 	#else

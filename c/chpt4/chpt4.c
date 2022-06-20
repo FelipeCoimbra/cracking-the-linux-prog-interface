@@ -42,13 +42,13 @@ void chpt4_run(const char* q, int argc, char* argv[]) {
             idx++;
         }
 
-        q1(filepath, append);
+        chpt4_q1(filepath, append);
 
     } else if (cmp_question(q, 2)) {
         if (argc != 3) {
            usageErr(q2_usage);
         } else {
-            q2(argv[1], argv[2]);
+            chpt4_q2(argv[1], argv[2]);
         }
     } else {
         usageErr("Chapter 4 has no solution for \"%s\"\n", q);

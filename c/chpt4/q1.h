@@ -3,6 +3,6 @@
 
 #include "../shared/utils.h"
 
-void q1(char * filepath, Boolean append);
+void chpt4_q1(char * filepath, Boolean append);
 
 #endif
