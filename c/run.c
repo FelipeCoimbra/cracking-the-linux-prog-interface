@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include "chpt4/chpt4.h"
+#include "chpt5/chpt5.h"
 
 /**
  * chpt_number must be in range [0,64]
@@ -43,6 +44,8 @@ int main(int argc, char* argv[]) {
     argc -= 2; // Point to the question arg as new argv[0]
     if (cmp_chpt(argv[1], 4)) {
         chpt4_run(argv[2], argc, argv+2);
+    } else if (cmp_chpt(argv[1], 5)) {
+        chpt5_run(argv[2], argc, argv+2);
     } else {
         fprintf(stderr, "No solutions for chapter %s\n", argv[1]);
     }
