@@ -9,6 +9,7 @@
 #include "q3.h"
 #include "q4.h"
 #include "q5.h"
+#include "q6.h"
 
 void chpt5_run(const char* q, int argc, char* argv[]) {
     const char * q1_usage = "chpt5 q1 <FILEPATH (255)> <OFFSET>\n";
@@ -63,6 +64,8 @@ void chpt5_run(const char* q, int argc, char* argv[]) {
         chpt5_q4();
     } else if (cmp_question(q, 5)) {
         chpt5_q5();
+    } else if (cmp_question(q, 6)) {
+        chpt5_q6();
     } else {
         usageErr("Chapter 4 has no solution for \"%s\"\n", q);
     }
