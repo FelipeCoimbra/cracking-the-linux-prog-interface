@@ -70,6 +70,6 @@ void chpt5_run(const char* q, int argc, char* argv[]) {
     } else if (cmp_question(q, 7)) {
         chpt5_q7();
     } else {
-        usageErr("Chapter 4 has no solution for \"%s\"\n", q);
+        usageErr("Chapter 5 has no solution for \"%s\"\n", q);
     }
 }
