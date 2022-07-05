@@ -6,6 +6,7 @@
 #include "chpt4/chpt4.h"
 #include "chpt5/chpt5.h"
 #include "chpt6/chpt6.h"
+#include "chpt7/chpt7.h"
 
 /**
  * chpt_number must be in range [0,64]
@@ -49,6 +50,8 @@ int main(int argc, char* argv[]) {
         chpt5_run(argv[2], argc, argv+2);
     } else if (cmp_chpt(argv[1], 6)) {
         chpt6_run(argv[2], argc, argv+2);
+    } else if (cmp_chpt(argv[1], 7)) {
+        chpt7_run(argv[2], argc, argv+2);
     } else {
         fprintf(stderr, "No solutions for chapter %s\n", argv[1]);
         exit(1);
