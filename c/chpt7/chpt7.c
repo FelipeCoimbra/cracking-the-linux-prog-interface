@@ -15,7 +15,7 @@ void chpt7_run(const char* q, int argc, char* args[]) {
 
         int num_allocs = strtol(args[1], &end_ptr, 10);
         if (*end_ptr != '\0' || num_allocs <= 0 || num_allocs > Q1_MAX_NUM_ALLOCS) {
-            usageErr("q1_usage");
+            usageErr(q1_usage);
         }
 
         int block_size = strtol(args[2], &end_ptr, 10);
