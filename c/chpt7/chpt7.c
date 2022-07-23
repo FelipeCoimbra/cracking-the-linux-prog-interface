@@ -3,6 +3,7 @@
 #include "../shared/errors.h"
 #include "../shared/utils.h"
 #include "q1.h"
+#include "q2.h"
 
 void chpt7_run(const char* q, int argc, char* args[]) {
     const char * q1_usage = "<0 < NUM_ALLOCS <= 1000000> <BLOCK_SIZE > 0> [<FREE_STEP> > 0] [<FREE_MIN> > 0] [0 < <FREE_MAX> < num_allocs]\n";
@@ -36,6 +37,8 @@ void chpt7_run(const char* q, int argc, char* args[]) {
         }
 
         chpt7_q1(num_allocs, block_size, free_step, free_min, free_max);
+    } else if (cmp_question(q, 2)) {
+        chpt7_q2();
     } else {
         usageErr("Chapter 7 has no solution for \"%s\"\n", q);
     }
